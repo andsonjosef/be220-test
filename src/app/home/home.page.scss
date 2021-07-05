@@ -1,27 +1,132 @@
-#container {
-  text-align: center;
+.home-toolbar {
+  --border-width: 0 !important;
+}
 
+ion-item {
+  --ion-item-background: transparent;
+  --inner-border-width: 0px 0px 0px 0px;
+}
+
+.menu-button {
+  color: white;
+  font-size: 5vh;
+}
+
+.slide-title-item {
+  ion-item {
+    .slide-title-icon {
+      color: orange;
+    }
+
+    .slide-title-badge {
+      background-color: orange;
+      color: white;
+      font-size: 0.5vh;
+      box-shadow: 0 0 1em gold;
+      margin-bottom: 1.4vh;
+      font-weight: 900;
+      padding: 0.3vh;
+    }
+
+    p {
+      font-size: 3vh;
+      margin-top: 0;
+      color: white;
+    }
+    ion-icon {
+      font-size: 3vh;
+    }
+  }
+}
+
+.logo {
+  max-width: 15vh;
+}
+
+.notification-button {
+  height: 6vh;
+}
+
+.notification-icon {
+  background-color: black;
+  padding: 1vh;
+  border-radius: 50%;
+  font-size: 4vw;
+  color: orange;
+}
+
+.notification-badge {
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 6px;
+  right: 0px;
+  background-color: lightgreen;
+  font-size: 0px;
+  --padding-start: 5px;
+  --padding-end: 5px;
+  --padding-top: 5px;
+  --padding-top: 5px;
+  border-radius: 50%;
+  z-index: 1;
+  height: 2vw;
+  width: 2vw;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.profile {
+  text-transform: capitalize;
+  ion-avatar {
+    margin: 10px;
+    height: 15vw;
+    width: 15vw;
+  }
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.profile {
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  background-color: #1f1f1f;
 }
 
-#container a {
-  text-decoration: none;
+.profile-user-info {
+  h2 {
+    font-size: 4vw;
+  }
+
+  p {
+    font-size: 3vw;
+  }
+}
+.profile-chip {
+  background-color: #151515;
+
+  padding: 2vh 0 2vh 0;
+  p {
+    font-size: 3vw;
+    color: orange;
+  }
+
+  ion-icon {
+    font-size: 4vw;
+    color: orange;
+  }
+}
+
+.header-md::after {
+  background-image: none !important;
+}
+
+.slide-title {
+  margin-left: 10%;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+ion-content {
+  text-transform: uppercase;
+}
+
+ion-content,
+ion-header {
+  font-style: normal;
+  font-weight: 100;
+  font-size: smaller;
 }

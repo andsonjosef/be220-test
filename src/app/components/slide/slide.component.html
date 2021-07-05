@@ -1,0 +1,45 @@
+<div class="slide-list">
+  <ion-slides pager="true" [options]="slideOpts">
+    <!-- NEW SLIDE -->
+    <ion-slide *ngIf="newSlideOption">
+      <ion-card
+        class="slide-card"
+        [style.backgroundImage]="'url(' + newSlideOption.imgUrl + ')'"
+      >
+        <ion-card-content class="new-card">
+          <ion-item class="new-card-item">
+            <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+
+            <ion-label>
+              <p>
+                {{ newSlideOption.title }}
+              </p>
+            </ion-label>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+
+    <!-- SLIDE LIST -->
+    <ion-slide *ngFor="let slide of slides">
+      <ion-card
+        class="slide-card"
+        [style.backgroundImage]="'url(' + slide.imgUrl + ')'"
+        [ngClass]="slide.imgUrl ? '' : 'empty-card'"
+      >
+        <ion-card-content>
+          <div class="card-footer">
+            <ion-card-subtitle
+              ><p *ngIf="slide.showSubTitle">
+                {{ slide.subtitle || "continuar treinando" }}
+              </p></ion-card-subtitle
+            >
+            <ion-card-title
+              ><p>{{ slide.title }}</p></ion-card-title
+            >
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</div>

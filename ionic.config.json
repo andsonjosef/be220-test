@@ -1,5 +1,7 @@
 {
   "name": "usinaPlay",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

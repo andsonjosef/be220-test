@@ -1,0 +1,94 @@
+ion-slide {
+  margin-top: -1vh;
+
+  ion-item {
+    --ion-item-background: transparent;
+    --inner-border-width: 0px 0px 0px 0px;
+  }
+
+  .new-card {
+    width: 60vw;
+    height: 18vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15%;
+    .new-card-item {
+      ion-icon {
+        margin: 0;
+        font-size: 12vw;
+      }
+
+      ion-label {
+        white-space: break-spaces;
+        text-align: start;
+
+        p {
+          text-shadow: 1px 1px #000000;
+          font-size: 4vw;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .empty-card {
+    border: solid;
+    border-width: thin;
+    border-color: white;
+  }
+
+  .slide-card {
+    width: 60vw;
+    height: 18vh;
+    border-radius: 25px;
+    background-size: cover;
+    background-blend-mode: luminosity;
+    background-color: #050505;
+    ion-card-content {
+      height: 100%;
+      .card-footer {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 10px;
+      }
+      ion-card-title {
+        text-align: start;
+        p {
+          text-shadow: 1px 1px #000000;
+          font-size: 2.5vw;
+          font-weight: bolder;
+        }
+      }
+      ion-card-subtitle {
+        text-align: start;
+        p {
+          font-size: 2.5vw;
+          text-shadow: 1px 1px #000000;
+          color: orange;
+          text-transform: lowercase;
+        }
+      }
+    }
+  }
+}
+ion-slide:not(:first-child) {
+  margin-left: -30vw;
+}
+
+ion-slide:first-child {
+  margin-left: -10vw;
+}
+
+.slide-list {
+  ion-slides {
+    opacity: 40%;
+  }
+}
+
+.slide-list:hover,
+ion-slides:hover {
+  ion-slides {
+    opacity: 100%;
+  }
+}

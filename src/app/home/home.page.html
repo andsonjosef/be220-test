@@ -1,20 +1,77 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header [translucent]="false">
+  <ion-toolbar class="home-toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button class="menu-button" auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+
+    <div class="ion-text-center">
+      <img class="logo" src="../../assets/imgs/logo/logo.png" />
+    </div>
+    <div slot="end">
+      <ion-button fill="clear" class="notification-button" slot="icon-only">
+        <ion-badge fill="solid" class="notification-badge">1</ion-badge>
+        <ion-icon fill="clear" name="notifications" class="notification-icon">
+        </ion-icon>
+      </ion-button>
+    </div>
   </ion-toolbar>
+
+  <!-- PROFILE -->
+  <div class="profile ion-padding-bottom">
+    <div class="profile-user-info ion-margin-start">
+      <ion-item class="ion-no-border ion-magin profile">
+        <ion-avatar slot="start" class="profile-img">
+          <img src="../../assets/imgs/avatar/img_avatar.png" />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{user.name}}</h2>
+          <p [style.color]="bindUserLevel(user.level).levelColor">
+            Nivel {{bindUserLevel(user.level).levelTitle}}
+          </p>
+        </ion-label>
+      </ion-item>
+    </div>
+
+    <div class="ion-text-center">
+      <ion-chip class="profile-chip">
+        <ion-item>
+          <ion-icon name="body"></ion-icon>
+          <p>MEU CORPO</p>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="medal"></ion-icon>
+          <p>OBJETIVOS E CONQUISTAS</p>
+        </ion-item>
+      </ion-chip>
+    </div>
+  </div>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<!-- SLIDES -->
+<ion-content [fullscreen]="true" class="ion-padding-top">
+  <!-- ONLINE PERSONAL-->
+  <div class="slide-title-item">
+    <ion-item>
+      <p class="slide-title">PERSONAL ONLINE</p>
+      <ion-icon class="slide-title-icon" name="add-circle-outline"></ion-icon>
+    </ion-item>
   </div>
+  <app-slide [slides]="slides" [newSlideOption]="newSlideOption"></app-slide>
+
+  <!-- PROGRAMS ONLINE-->
+  <div class="slide-title-item">
+    <ion-item>
+      <p class="slide-title">PROGRAMAS</p>
+      <ion-badge class="slide-title-badge" color="warning">NOVO</ion-badge>
+    </ion-item>
+  </div>
+  <app-slide [slides]="slides"></app-slide>
+
+  <!--  CONTENT -->
+  <div class="slide-title-item">
+    <ion-item>
+      <p class="slide-title">CONTEÚDOS</p>
+    </ion-item>
+  </div>
+  <app-slide [slides]="contents"></app-slide>
 </ion-content>
